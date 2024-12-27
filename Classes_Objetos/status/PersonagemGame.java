@@ -1,8 +1,8 @@
 public class PersonagemGame {
-    // Atributos privados
-    private int saudeAtual;
-    private String nome;
-    private String status;
+    public PersonagemGame(int saudeInicial, String nomeInicial) {
+        setSaudeAtual(saudeInicial);
+        setNome(nomeInicial);
+    }
 
     // Getter para saudeAtual
     public int getSaudeAtual() {
@@ -11,7 +11,14 @@ public class PersonagemGame {
 
     // Setter para saudeAtual
     public void setSaudeAtual(int saudeAtual) {
-        this.saudeAtual = saudeAtual;
+        if (saudeAtual < 0) {
+            this.saudeAtual = 0;
+        } else if (saudeAtual > 100) {
+            this.saudeAtual = 100;
+        } else {
+            this.saudeAtual = saudeAtual;
+        }
+
         if (this.saudeAtual > 0) {
             this.status = "vivo";
         } else {
@@ -26,7 +33,9 @@ public class PersonagemGame {
 
     // Setter para nome
     public void setNome(String nome) {
-        this.nome = nome;
+        if (nome != null && !nome.trim().isEmpty()) {
+            this.nome = nome;
+        }
     }
 
     // Getter para status
@@ -41,6 +50,6 @@ public class PersonagemGame {
 
     // Método receberCura
     public void receberCura(int quantidadeDeCura) {
-        setSaudeAtual(this.saudeAtual + quantidadeDeCura > 100 ? 100 : this.saudeAtual + quantidadeDeCura);
+        setSaudeAtual(this.saudeAtual + quantidadeDeCura);
     }
 }
