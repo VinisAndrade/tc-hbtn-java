@@ -4,9 +4,10 @@ public class Program {
         FormaGeometrica formaGeometrica = new FormaGeometrica();
 
         try {
-            System.out.printf("Area: %d", formaGeometrica.area());
-        } catch (Exception e) {
-            System.out.println(e);
+            FormaGeometrica formaGeometrica = new FormaConcreta();
+            System.out.println(formaGeometrica.area());
+        } catch (UnsupportedOperationException e) {
+            System.out.println(e.getMessage());
         }
     }
 }
