@@ -1,5 +1,11 @@
 
 import java.util.Locale;
+package produtos;
+import produtos.Pedido;
+import produtos.Livro;
+import produtos.Dvd;
+
+
 
 public class Program {
     public static void main(String[] args) {
