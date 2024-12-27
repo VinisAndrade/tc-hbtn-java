@@ -18,13 +18,13 @@ public class PersonagemGame {
 
     // Setter para saudeAtual
     public void setSaudeAtual(int saudeAtual) {
-        /*if (saudeAtual < 0) {
+        if (saudeAtual < 0) {
             this.saudeAtual = 0;
         } else if (saudeAtual > 100) {
             this.saudeAtual = 100;
         } else {
             this.saudeAtual = saudeAtual;
-        }*/
+        }
 
         if (this.saudeAtual > 0) {
             this.status = "vivo";
