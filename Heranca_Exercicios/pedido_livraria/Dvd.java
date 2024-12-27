@@ -5,7 +5,6 @@ public class Dvd extends Produto {
     private String genero;
     private int duracao;
 
-    // Construtor
     public Dvd(String titulo, int ano, String pais, double precoBruto, String diretor, String genero, int duracao) {
         super(titulo, ano, pais, precoBruto);
         this.diretor = diretor;
@@ -13,13 +12,11 @@ public class Dvd extends Produto {
         this.duracao = duracao;
     }
 
-    // Sobrescrita do método abstrato
     @Override
     public double obterPrecoLiquido() {
-        return getPrecoBruto() * 1.20;  // Acréscimo de 20%
+        return getPrecoBruto() * 1.20;
     }
 
-    // Getters
     public String getDiretor() {
         return diretor;
     }

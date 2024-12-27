@@ -6,7 +6,6 @@ public abstract class Produto {
     private String pais;
     private double precoBruto;
 
-    // Construtor
     public Produto(String titulo, int ano, String pais, double precoBruto) {
         this.titulo = titulo;
         this.ano = ano;
@@ -14,10 +13,8 @@ public abstract class Produto {
         this.precoBruto = precoBruto;
     }
 
-    // Método abstrato
     public abstract double obterPrecoLiquido();
 
-    // Getters
     public String getTitulo() {
         return titulo;
     }
