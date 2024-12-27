@@ -1,8 +1,6 @@
 public class Program {
     public static void main(String[] args) {
-        PersonagemGame personagem1 = new PersonagemGame();
-        personagem1.setNome("Sonic");
-        personagem1.setSaudeAtual(0);
+        PersonagemGame personagem1 = new PersonagemGame(0, "Sonic");
 
         System.out.printf("%d - %s\n", personagem1.getSaudeAtual(), personagem1.getStatus());
 
