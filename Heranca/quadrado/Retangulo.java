@@ -1,6 +1,6 @@
 public class Retangulo extends FormaGeometrica {
-    private double largura;
-    private double altura;
+    protected double largura;
+    protected double altura;
 
     // Getter para largura
     public double getLargura() {
