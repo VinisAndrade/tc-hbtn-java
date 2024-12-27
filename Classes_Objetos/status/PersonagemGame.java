@@ -1,4 +1,11 @@
 public class PersonagemGame {
+
+    // Atributos privados
+    private int saudeAtual;
+    private String nome;
+    private String status;
+
+    // Construtor
     public PersonagemGame(int saudeInicial, String nomeInicial) {
         setSaudeAtual(saudeInicial);
         setNome(nomeInicial);
