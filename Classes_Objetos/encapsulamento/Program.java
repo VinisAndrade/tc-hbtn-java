@@ -1,19 +1,39 @@
-public class Program {
+public class PersonagemGame {
+
+    // Atributos privados
+    private int saudeAtual;
+    private String nome;
+
+    // Getter para saudeAtual
+    public int getSaudeAtual() {
+        return saudeAtual;
+    }
+
+    // Setter para saudeAtual
+    public void setSaudeAtual(int saudeAtual) {
+        this.saudeAtual = saudeAtual;
+    }
+
+    // Getter para nome
+    public String getNome() {
+        return nome;
+    }
+
+    // Setter para nome
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+
     public static void main(String[] args) {
-        // Criação de dois personagens
-        PersonagemGame personagem1 = new PersonagemGame();
-        PersonagemGame personagem2 = new PersonagemGame();
+        // Criando uma instância de PersonagemGame
+        PersonagemGame personagem = new PersonagemGame();
 
-        // Configuração de atributos para o primeiro personagem
-        personagem1.nome = "Sonic";
-        personagem1.saudeAtual = 10;
+        // Configurando os valores
+        personagem.setNome("Aragorn");
+        personagem.setSaudeAtual(100);
 
-        // Configuração de atributos para o segundo personagem
-        personagem2.nome = "Mario";
-        personagem2.saudeAtual = 100;
-
-        // Impressão dos atributos dos personagens
-        System.out.printf("Nome: %s - Saude: %d\n", personagem1.nome, personagem1.saudeAtual);
-        System.out.printf("Nome: %s - Saude: %d\n", personagem2.nome, personagem2.saudeAtual);
+        // Exibindo os valores
+        System.out.println("Nome do Personagem: " + personagem.getNome());
+        System.out.println("Saúde Atual: " + personagem.getSaudeAtual());
     }
 }
