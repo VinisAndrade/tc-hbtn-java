@@ -2,7 +2,7 @@ public class Program {
     public static void main(String[] args) {
         //PersonagemGame personagem1 = new PersonagemGame(0, "Sonic");
 
-        PersonagemGame personagem1 = new PersonagemGame();
+        PersonagemGame personagem1 = new PersonagemGame(50, "Sonic");
 
         personagem1.setNome("Sonic");
         personagem1.setSaudeAtual(0);
