@@ -3,7 +3,7 @@ public class Program {
 
         PersonagemGame personagem1 = new PersonagemGame();
 
-        
+
         personagem1.setNome("Sonic");
         personagem1.setSaudeAtual(10);
 
