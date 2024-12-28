@@ -4,9 +4,9 @@ import exceptions.LivroInvalidoException;
 public class Livro {
     private String titulo;
     private String autor;
-    private double preco;
+    private float preco;
 
-    public Livro(String titulo, String autor, double preco) throws AutorInvalidoException, LivroInvalidoException {
+    public Livro(String titulo, String autor, float preco) throws AutorInvalidoException, LivroInvalidoException {
         setTitulo(titulo);
         setAutor(autor);
         setPreco(preco);
@@ -20,7 +20,7 @@ public class Livro {
         return autor;
     }
 
-    public double getPreco() {
+    public float getPreco() {
         return preco;
     }
 
