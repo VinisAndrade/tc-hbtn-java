@@ -1,9 +1,5 @@
-import exceptions.AutorInvalidoException;
-import exceptions.LivroInvalidoException;
-
 public class Program {
     public static void main(String[] args) {
-
         try {
             Livro livro1 = new Livro(
                     "As barbas do imperador: D. Pedro II",
@@ -28,7 +24,6 @@ public class Program {
                     livroEdicaoOuro1.getTitulo(),
                     livroEdicaoOuro1.getAutor(),
                     livroEdicaoOuro1.getPreco());
-
         } catch (Exception ex) {
             System.out.println(ex.getMessage() + "\n");
         }
