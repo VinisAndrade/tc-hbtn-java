@@ -1,3 +1,5 @@
+import exceptions.OperacaoInvalidaException;
+
 public class ContaBancariaControlada extends ContaBancariaBasica {
     private double saldoMinimo;
     private double valorPenalidade;
