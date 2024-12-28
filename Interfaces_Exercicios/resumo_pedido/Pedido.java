@@ -3,10 +3,10 @@ import provedores.*;
 public class Pedido {
     private String codigo;
     private double peso; // peso em gramas
-    private float total;
+    private double total;
     private Frete frete;
 
-    public Pedido(String codigo, double peso, int total) {
+    public Pedido(String codigo, double peso, double total) {
         this.codigo = codigo;
         this.peso = peso;
         this.total = total;
@@ -20,7 +20,7 @@ public class Pedido {
         return peso;
     }
 
-    public float getTotal() {
+    public double getTotal() {
         return total;
     }
 
