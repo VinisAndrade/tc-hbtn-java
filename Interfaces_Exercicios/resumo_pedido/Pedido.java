@@ -4,7 +4,7 @@ import provedores.*;
 public class Pedido {
     private String codigo;
     private double peso; // peso em gramas
-    private int total;
+    private float total;
     private Frete frete;
 
     public Pedido(String codigo, double peso, int total) {
@@ -21,7 +21,7 @@ public class Pedido {
         return peso;
     }
 
-    public int getTotal() {
+    public float getTotal() {
         return total;
     }
 
