@@ -11,3 +11,4 @@ public class Numero {
             System.out.printf("Resultado da divisão: %.2f\n", (double) a / b);
         }
     }
+}
