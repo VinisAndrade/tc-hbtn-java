@@ -1,4 +1,3 @@
-package provedores;
 import provedores.*;
 
 public class Pedido {
