@@ -1,5 +1,5 @@
-//import livraria.Livro;
-//import livraria.LivroEdicaoOuro;
+import livraria.Livro;
+import livraria.LivroEdicaoOuro;
 import exceptions.AutorInvalidoException;
 import exceptions.LivroInvalidoException;
 
