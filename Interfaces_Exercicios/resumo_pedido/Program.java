@@ -4,24 +4,24 @@ import java.util.Locale;
 public class Program {
     public static void main(String[] args) {
         Locale.setDefault(new Locale("pt", "BR"));
+        Pedido pedido1 = new Pedido(1, 1500, 234.90);
+        Pedido pedido2 = new Pedido(2, 600, 124.00);
+        Pedido pedido3 = new Pedido(3, 3000, 53.00);
+        Pedido pedido4 = new Pedido(4, 7000, 300.00);
 
-        // Criando pedidos
-        Pedido pedido1 = new Pedido("1", 1500, 234,90); // Corretamente com string para o código
-        Pedido pedido2 = new Pedido("2", 600, 124,00);
-        Pedido pedido3 = new Pedido("3", 3000, 53,00);
-        Pedido pedido4 = new Pedido("4", 7000, 300,00);
-
-        // Criando processadores de frete
         ProcessadorPedido processadorPedidoSedex = new ProcessadorPedido(new Sedex());
         processadorPedidoSedex.processar(pedido1);
+
         System.out.printf("%s - %.2f\n", pedido1.getFrete().getTipoProvedorFrete(), pedido1.getFrete().getValor());
 
         ProcessadorPedido processadorPedidoJadLog = new ProcessadorPedido(new JadLog());
         processadorPedidoJadLog.processar(pedido1);
+
         System.out.printf("%s - %.2f\n", pedido1.getFrete().getTipoProvedorFrete(), pedido1.getFrete().getValor());
 
         ProcessadorPedido processadorPedidoLoggi = new ProcessadorPedido(new Loggi());
         processadorPedidoLoggi.processar(pedido1);
+
         System.out.printf("%s - %.2f\n", pedido1.getFrete().getTipoProvedorFrete(), pedido1.getFrete().getValor());
 
         System.out.println("-----");
