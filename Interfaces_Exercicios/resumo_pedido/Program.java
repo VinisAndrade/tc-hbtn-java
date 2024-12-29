@@ -6,10 +6,10 @@ public class Program {
         Locale.setDefault(new Locale("pt", "BR"));
 
         // Criando pedidos
-        Pedido pedido1 = new Pedido("1", 1500, 234.90); // Corretamente com string para o código
-        Pedido pedido2 = new Pedido("2", 600, 124.00);
-        Pedido pedido3 = new Pedido("3", 3000, 53.00);
-        Pedido pedido4 = new Pedido("4", 7000, 300.00);
+        Pedido pedido1 = new Pedido("1", 1500, 234,90); // Corretamente com string para o código
+        Pedido pedido2 = new Pedido("2", 600, 124,00);
+        Pedido pedido3 = new Pedido("3", 3000, 53,00);
+        Pedido pedido4 = new Pedido("4", 7000, 300,00);
 
         // Criando processadores de frete
         ProcessadorPedido processadorPedidoSedex = new ProcessadorPedido(new Sedex());

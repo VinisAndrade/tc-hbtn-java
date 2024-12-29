@@ -1,9 +1,13 @@
 public class PersonagemGame {
-    //public int saudeAtual; // Atributo público de saúde
-    //public String nome;    // Atributo público de nome
     // Atributos privados
     private int saudeAtual;
     private String nome;
+
+    // Construtor da classe
+    public PersonagemGame(int saudeAtual, String nome) {
+        this.saudeAtual = saudeAtual;
+        this.nome = nome;
+    }
 
     // Getter para saudeAtual
     public int getSaudeAtual() {
