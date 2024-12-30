@@ -1,4 +1,4 @@
-package provedores;
+import provedores.*;
 
 public class ProcessadorPedido {
     private ProvedorFrete provedorFrete;
@@ -8,8 +8,6 @@ public class ProcessadorPedido {
     }
 
     public void processar(Pedido pedido) {
-        // Calcula o frete baseado no provedor de frete
-        Frete frete = provedorFrete.calcularFrete(pedido.getPeso(), pedido.getTotal());
-        pedido.setFrete(frete);
+        pedido.setFrete(this.provedorFrete.calcularFrete(pedido.getPeso(), pedido.getTotal()));
     }
 }
