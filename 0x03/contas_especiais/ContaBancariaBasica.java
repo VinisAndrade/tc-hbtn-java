@@ -2,7 +2,7 @@ import exceptions.OperacaoInvalidaException;
 
 public class ContaBancariaBasica {
     private String numeracao;
-    private double saldo = 0;
+    protected double saldo = 0;
     private double taxaJurosAnual;
 
     public ContaBancariaBasica(String numeracao, double taxaJurosAnual) {
@@ -34,7 +34,7 @@ public class ContaBancariaBasica {
         if (valor <= 0 ) {
             throw new OperacaoInvalidaException("Valor de saque deve ser maior que 0");
         } else if (valor > this.saldo) {
-            throw new OperacaoInvalidaException("Valor de saque deve ser menor que o saldo atual");
+            throw new OperacaoInvalidaException("Valor de saque deve ser maior que o saldo atual");
         } else {
             this.saldo = this.saldo - valor;
         }
