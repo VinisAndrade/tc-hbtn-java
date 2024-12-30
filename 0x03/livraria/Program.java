@@ -8,7 +8,6 @@ public class Program {
                     56);
 
             System.out.printf(Locale.FRANCE,"Titulo: %s - Autor: %s - Preco: %.2f\n",
-            System.out.printf("Titulo: %s - Autor: %s - Preco: %.2f\n",
                     livro1.getTitulo(),
                     livro1.getAutor(),
                     livro1.getPreco());
@@ -23,7 +22,6 @@ public class Program {
                     38.30);
 
             System.out.printf(Locale.FRANCE,"Titulo: %s - Autor: %s - Preco: %.2f\n",
-            System.out.printf("Titulo: %s - Autor: %s - Preco: %.2f\n",
                     livroEdicaoOuro1.getTitulo(),
                     livroEdicaoOuro1.getAutor(),
                     livroEdicaoOuro1.getPreco());
