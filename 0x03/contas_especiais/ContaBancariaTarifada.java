@@ -21,7 +21,7 @@ public class ContaBancariaTarifada extends ContaBancariaBasica {
 
     @Override
     public void sacar(double valor) throws OperacaoInvalidaException {
-        super.sacar(valor + 0.10); // Inclui a tarifa na operação
+        super.sacar(valor - 0.10); // Inclui a tarifa na operação
         quantidadeTransacoes++;
     }
 }
