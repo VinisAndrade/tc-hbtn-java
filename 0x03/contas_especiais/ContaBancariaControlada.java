@@ -1,6 +1,7 @@
 import exceptions.OperacaoInvalidaException;
 
 public class ContaBancariaControlada extends ContaBancariaBasica {
+
     private double saldoMinimo;
     private double valorPenalidade;
 
@@ -13,12 +14,10 @@ public class ContaBancariaControlada extends ContaBancariaBasica {
     @Override
     public void aplicarAtualizacaoMensal() {
         super.aplicarAtualizacaoMensal();
-        if (getSaldo() < saldoMinimo) {
-            try {
-                sacar(valorPenalidade);
-            } catch (OperacaoInvalidaException e) {
-                // Ignorar exceção, pois valorPenalidade deve sempre ser aplicável.
-            }
+        if(this.getSaldo() < this.saldoMinimo) {
+            this.saldo = this.saldo - valorPenalidade;
         }
     }
+
+
 }
