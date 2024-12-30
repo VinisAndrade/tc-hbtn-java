@@ -1,11 +1,4 @@
-
-import java.util.Locale;
-package produtos;
-import produtos.Pedido;
-import produtos.Livro;
-import produtos.Dvd;
-
-
+import java.util.*;
 
 public class Program {
     public static void main(String[] args) {
@@ -26,7 +19,7 @@ public class Program {
                 109);
 
         // Pedido 1
-        ItemPedido[] itensPedido1 = new ItemPedido[]{
+        ItemPedido[] itensPedido1 = new ItemPedido[] {
                 new ItemPedido(livro1, 1),
                 new ItemPedido(dvd2, 1)
         };
@@ -36,7 +29,7 @@ public class Program {
         pedido1.apresentarResumoPedido();
 
         // Pedido 2
-        ItemPedido[] itensPedido2 = new ItemPedido[]{
+        ItemPedido[] itensPedido2 = new ItemPedido[] {
                 new ItemPedido(livro1, 1),
                 new ItemPedido(dvd2, 1)
         };
@@ -46,7 +39,7 @@ public class Program {
         pedido2.apresentarResumoPedido();
 
         // Pedido 3
-        ItemPedido[] itensPedido3 = new ItemPedido[]{
+        ItemPedido[] itensPedido3 = new ItemPedido[] {
                 new ItemPedido(livro2, 1),
                 new ItemPedido(livro3, 2),
                 new ItemPedido(dvd1, 1)
@@ -57,7 +50,7 @@ public class Program {
         pedido3.apresentarResumoPedido();
 
         // Pedido 4
-        ItemPedido[] itensPedido4 = new ItemPedido[]{
+        ItemPedido[] itensPedido4 = new ItemPedido[] {
                 new ItemPedido(livro2, 1),
                 new ItemPedido(livro2, 1),
                 new ItemPedido(livro3, 2),
