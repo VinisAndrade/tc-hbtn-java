@@ -12,20 +12,7 @@ public class Livro extends Produto {
         this.edicao = edicao;
     }
 
-    @Override
     public double obterPrecoLiquido() {
-        return getPrecoBruto() * 1.15;
-    }
-
-    public int getPaginas() {
-        return paginas;
-    }
-
-    public String getAutor() {
-        return autor;
-    }
-
-    public int getEdicao() {
-        return edicao;
+        return this.precoBruto * 1.15;
     }
 }
