@@ -2,12 +2,11 @@ import exceptions.OperacaoInvalidaException;
 
 public class ContaBancariaBasica {
     private String numeracao;
-    private double saldo;
+    private double saldo = 0;
     private double taxaJurosAnual;
 
     public ContaBancariaBasica(String numeracao, double taxaJurosAnual) {
         this.numeracao = numeracao;
-        this.saldo = 0;
         this.taxaJurosAnual = taxaJurosAnual;
     }
 
@@ -24,36 +23,42 @@ public class ContaBancariaBasica {
     }
 
     public void depositar(double valor) throws OperacaoInvalidaException {
-        if (valor <= 0) {
+        if (valor > 0) {
+            this.saldo = this.saldo + valor;
+        } else {
             throw new OperacaoInvalidaException("Valor para deposito deve ser maior que 0");
         }
-        saldo += valor;
     }
 
     public void sacar(double valor) throws OperacaoInvalidaException {
-        if (valor <= 0) {
+        if (valor <= 0 ) {
             throw new OperacaoInvalidaException("Valor de saque deve ser maior que 0");
-        }
-        if (valor > saldo) {
+        } else if (valor > this.saldo) {
             throw new OperacaoInvalidaException("Valor de saque deve ser menor que o saldo atual");
+        } else {
+            this.saldo = this.saldo - valor;
         }
-        saldo -= valor;
     }
 
     public double calcularTarifaMensal() {
-        return Math.min(10, saldo * 0.1);
+        double tarifa = 10.00;
+        if(tarifa < this.saldo * 0.1) {
+            return tarifa;
+        } else {
+            return this.saldo * 0.1;
+        }
     }
 
     public double calcularJurosMensal() {
-        if (saldo <= 0) {
+        if(this.saldo < 0) {
             return 0;
+        } else {
+            return (this.taxaJurosAnual / 12 / 100) * this.saldo;
         }
-        double taxaJurosMensal = taxaJurosAnual / 12 / 100;
-        return saldo * taxaJurosMensal;
     }
 
     public void aplicarAtualizacaoMensal() {
-        saldo -= calcularTarifaMensal();
-        saldo += calcularJurosMensal();
+        this.saldo = this.saldo - calcularTarifaMensal() + calcularJurosMensal();
     }
+
 }
