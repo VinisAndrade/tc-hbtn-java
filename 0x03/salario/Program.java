@@ -1,47 +1,57 @@
-import java.lang.reflect.Modifier;
-import java.util.Locale;
+public static void main(String[] args) {
+    try {
+        ContaBancariaBasica conta1 = new ContaBancariaBasica("AAA", 50.0);
+        System.out.printf("Conta %s - saldo: %.2f\n", conta1.getNumeracao(), conta1.getSaldo());
+        conta1.depositar(100);
+        System.out.printf("Conta %s - saldo: %.2f\n", conta1.getNumeracao(), conta1.getSaldo());
+        conta1.sacar(25);
+        System.out.printf("Conta %s - saldo: %.2f\n", conta1.getNumeracao(), conta1.getSaldo());
+        conta1.aplicarAtualizacaoMensal();
+        System.out.printf("Conta %s - saldo: %.2f\n\n", conta1.getNumeracao(), conta1.getSaldo());
+    } catch (Exception ex) {
+        System.out.println(ex.getMessage() + "\n");
+    }
 
-public class Program {
-    public static void main(String[] args) {
-        Departamento departamentoEngenharia = new Departamento(1000, 1100);
-        Departamento departamentoDocumentacao = new Departamento(1000, 800);
+    try {
+        ContaBancariaBasica conta2 = new ContaBancariaBasica("BBB", 100.0);
+        System.out.printf("Conta %s - saldo: %.2f\n", conta2.getNumeracao(), conta2.getSaldo());
+        conta2.depositar(10);
+        System.out.printf("Conta %s - saldo: %.2f\n", conta2.getNumeracao(), conta2.getSaldo());
+        conta2.sacar(10);
+        System.out.printf("Conta %s - saldo: %.2f\n", conta2.getNumeracao(), conta2.getSaldo());
+        conta2.aplicarAtualizacaoMensal();
+        System.out.printf("Conta %s - saldo: %.2f\n\n", conta2.getNumeracao(), conta2.getSaldo());
+    } catch (Exception ex) {
+        System.out.println(ex.getMessage() + "\n");
+    }
 
-        Empregado empregadoEngenharia1 = new Empregado(2300);
-        Empregado empregadoEngenharia2 = new Empregado(3650);
-        Gerente gerenteEngenharia = new Gerente(5800);
+    try {
+        ContaBancariaBasica conta3 = new ContaBancariaBasica("CCC", 120.0);
+        System.out.printf("Conta %s - saldo: %.2f\n", conta3.getNumeracao(), conta3.getSaldo());
+        conta3.depositar(1600);
+        System.out.printf("Conta %s - saldo: %.2f\n", conta3.getNumeracao(), conta3.getSaldo());
+        conta3.aplicarAtualizacaoMensal();
+        System.out.printf("Conta %s - saldo: %.2f\n\n", conta3.getNumeracao(), conta3.getSaldo());
+    } catch (Exception ex) {
+        System.out.println(ex.getMessage() + "\n");
+    }
 
-        Empregado empregadoDocumentacao1 = new Empregado(2500);
-        Empregado empregadoDocumentacao2 = new Empregado(3000);
-        Gerente gerenteDocumentacao = new Gerente(4980);
+    try {
+        ContaBancariaBasica conta4 = new ContaBancariaBasica("DDD", 70.0);
+        System.out.printf("Conta %s - saldo: %.2f\n", conta4.getNumeracao(), conta4.getSaldo());
+        conta4.depositar(0);
+    } catch (Exception ex) {
+        System.out.println(ex.getMessage() + "\n");
+    }
 
-        System.out.printf(Locale.FRANCE,"Salario Fixo: %.2f - Salario Total: %.2f - Valor Bonus: %.2f\n",
-                empregadoEngenharia1.getSalarioFixo(),
-                empregadoEngenharia1.calcularSalarioTotal(departamentoEngenharia),
-                empregadoEngenharia1.calcularBonus(departamentoEngenharia));
-
-        System.out.printf(Locale.FRANCE,"Salario Fixo: %.2f - Salario Total: %.2f - Valor Bonus: %.2f\n",
-                empregadoEngenharia2.getSalarioFixo(),
-                empregadoEngenharia2.calcularSalarioTotal(departamentoEngenharia),
-                empregadoEngenharia2.calcularBonus(departamentoEngenharia));
-
-        System.out.printf(Locale.FRANCE,"Salario Fixo: %.2f - Salario Total: %.2f - Valor Bonus: %.2f\n",
-                gerenteEngenharia.getSalarioFixo(),
-                gerenteEngenharia.calcularSalarioTotal(departamentoEngenharia),
-                gerenteEngenharia.calcularBonus(departamentoEngenharia));
-
-        System.out.printf(Locale.FRANCE,"Salario Fixo: %.2f - Salario Total: %.2f - Valor Bonus: %.2f\n",
-                empregadoDocumentacao1.getSalarioFixo(),
-                empregadoDocumentacao1.calcularSalarioTotal(departamentoDocumentacao),
-                empregadoDocumentacao1.calcularBonus(departamentoDocumentacao));
-
-        System.out.printf(Locale.FRANCE,"Salario Fixo: %.2f - Salario Total: %.2f - Valor Bonus: %.2f\n",
-                empregadoDocumentacao2.getSalarioFixo(),
-                empregadoDocumentacao2.calcularSalarioTotal(departamentoDocumentacao),
-                empregadoDocumentacao2.calcularBonus(departamentoDocumentacao));
-
-        System.out.printf(Locale.FRANCE,"Salario Fixo: %.2f - Salario Total: %.2f - Valor Bonus: %.2f\n",
-                gerenteDocumentacao.getSalarioFixo(),
-                gerenteDocumentacao.calcularSalarioTotal(departamentoDocumentacao),
-                gerenteDocumentacao.calcularBonus(departamentoDocumentacao));
+    try {
+        ContaBancariaBasica conta5 = new ContaBancariaBasica("EEE", 50.0);
+        System.out.printf("Conta %s - saldo: %.2f\n", conta5.getNumeracao(), conta5.getSaldo());
+        conta5.depositar(25);
+        System.out.printf("Conta %s - saldo: %.2f\n", conta5.getNumeracao(), conta5.getSaldo());
+        conta5.sacar(30);
+    } catch (Exception ex) {
+        System.out.println(ex.getMessage() + "\n");
     }
 }
+    }
