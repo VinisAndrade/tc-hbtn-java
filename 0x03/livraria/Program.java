@@ -7,6 +7,7 @@ public class Program {
                     "Lilia Moritz Schwarcz",
                     56);
 
+            System.out.printf(Locale.FRANCE,"Titulo: %s - Autor: %s - Preco: %.2f\n",
             System.out.printf("Titulo: %s - Autor: %s - Preco: %.2f\n",
                     livro1.getTitulo(),
                     livro1.getAutor(),
@@ -21,6 +22,7 @@ public class Program {
                     "Fernando Morais",
                     38.30);
 
+            System.out.printf(Locale.FRANCE,"Titulo: %s - Autor: %s - Preco: %.2f\n",
             System.out.printf("Titulo: %s - Autor: %s - Preco: %.2f\n",
                     livroEdicaoOuro1.getTitulo(),
                     livroEdicaoOuro1.getAutor(),
