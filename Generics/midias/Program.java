@@ -12,7 +12,7 @@ public class Program {
 
         Jornal jornal1 = new Jornal("Folha de Sao Paulo", 130);
         Jornal jornal2 = new Jornal("Estadao", 113);
-        
+
         Biblioteca<Livro> bibliotecaLivros = new Biblioteca<>();
         bibliotecaLivros.adicionarMidia(livro1);
         bibliotecaLivros.adicionarMidia(livro2);
