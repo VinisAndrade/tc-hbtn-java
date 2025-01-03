@@ -1,4 +1,4 @@
-/*class Livro extends Midia {
+class Livro extends Midia {
     private int edicao;
 
     public Livro(String nome, int edicao) {
@@ -8,11 +8,5 @@
 
     public int getEdicao() {
         return edicao;
-    }
-}*/
-
-class Livro extends Midia {
-    public Livro(String nome) {
-        super(nome, "Livro");
     }
 }
