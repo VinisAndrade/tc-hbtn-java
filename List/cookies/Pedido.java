@@ -1,9 +1,12 @@
 class Pedido {
-    private List<PedidoCookie> cookies;
+    
+    private ArrayList<PedidoCookie> cookies;
+
 
     public Pedido() {
         this.cookies = new ArrayList<>();
     }
+
 
     public void adicionarPedidoCookie(PedidoCookie pedidoCookie) {
         cookies.add(pedidoCookie);
