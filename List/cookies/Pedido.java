@@ -1,37 +1,41 @@
-class Pedido {
-    
+import java.util.ArrayList;
+import java.util.Iterator;
+
+public class Pedido {
     private ArrayList<PedidoCookie> cookies;
 
-
     public Pedido() {
-        this.cookies = new ArrayList<>();
+        this.cookies = new ArrayList<PedidoCookie>();
     }
 
-
     public void adicionarPedidoCookie(PedidoCookie pedidoCookie) {
-        cookies.add(pedidoCookie);
+        this.cookies.add(pedidoCookie);
     }
 
     public int obterTotalCaixas() {
-        int total = 0;
-        for (PedidoCookie cookie : cookies) {
-            total += cookie.getQuantidadeCaixas();
+        int totalCaixas = 0;
+
+        for (PedidoCookie c : cookies) {
+            totalCaixas += c.getQuantidadeCaixas();
         }
-        return total;
+
+        return totalCaixas;
     }
 
     public int removerSabor(String sabor) {
-        int caixasRemovidas = 0;
-        Iterator<PedidoCookie> iterator = cookies.iterator();
+        int totalCaixasRemovidas = 0;
 
-        while (iterator.hasNext()) {
-            PedidoCookie cookie = iterator.next();
-            if (cookie.getSabor().equals(sabor)) {
-                caixasRemovidas += cookie.getQuantidadeCaixas();
-                iterator.remove();
+        Iterator<PedidoCookie> i = this.cookies.iterator();
+
+        while (i.hasNext()) {
+            PedidoCookie pedidoCookieAtual = i.next();
+
+            if (pedidoCookieAtual.getSabor() == sabor) {
+                totalCaixasRemovidas += pedidoCookieAtual.getQuantidadeCaixas();
+                i.remove();
             }
         }
 
-        return caixasRemovidas;
+        return totalCaixasRemovidas;
     }
 }

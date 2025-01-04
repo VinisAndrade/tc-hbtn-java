@@ -1,6 +1,4 @@
-import java.util.*;
-
-class PedidoCookie {
+public class PedidoCookie {
     private String sabor;
     private int quantidadeCaixas;
 
@@ -13,7 +11,15 @@ class PedidoCookie {
         return sabor;
     }
 
+    public void setSabor(String sabor) {
+        this.sabor = sabor;
+    }
+
     public int getQuantidadeCaixas() {
         return quantidadeCaixas;
+    }
+
+    public void setQuantidadeCaixas(int quantidadeCaixas) {
+        this.quantidadeCaixas = quantidadeCaixas;
     }
 }
