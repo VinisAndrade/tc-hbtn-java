@@ -5,7 +5,6 @@ public class Produto {
     private int quantidadeEmEstoque;
     private TiposProduto tipo;
 
-    // Construtor
     public Produto(String nome, double preco, double peso, int quantidadeEmEstoque, TiposProduto tipo) {
         this.nome = nome;
         this.preco = preco;
@@ -14,7 +13,6 @@ public class Produto {
         this.tipo = tipo;
     }
 
-    // Getters
     public String getNome() {
         return nome;
     }
@@ -35,10 +33,8 @@ public class Produto {
         return tipo;
     }
 
-    // Método toString()
-    @Override
     public String toString() {
-        return String.format("%s %.6f %.6f %d %s",
-                nome, preco, peso, quantidadeEmEstoque, tipo);
+        return String.format("%s %f %f %d %s",
+                getNome(), getPreco(), getPeso(), getQuantidadeEmEstoque(), getTipo());
     }
 }
