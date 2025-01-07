@@ -1,4 +1,7 @@
+import java.util.*;
+
 class Blog {
+
     private List<Post> postagens;
 
     public Blog() {
