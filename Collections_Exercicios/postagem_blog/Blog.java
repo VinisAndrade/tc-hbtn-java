@@ -1,3 +1,5 @@
+import java.util.*;
+
 class Blog {
     private Set<Post> postagens;
 
