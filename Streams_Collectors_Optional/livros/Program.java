@@ -1,6 +1,8 @@
 import java.util.List;
+import java.util.Locale;
 
 public class Program {
+    Locale.setDefault(new Locale("pt", "BR"));
     public static void main(String[] args) {
         Produto produto1 = new Produto(1,
                 "Carro Vortex", CategoriaProduto.BRINQUEDO, 799.90);
