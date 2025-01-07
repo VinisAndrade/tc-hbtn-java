@@ -1,3 +1,3 @@
-public enum Categorias {
-    DEVOPS, DESENVOLVIMENTO, DATA_SCIENCE;  
+enum Categorias {
+    DEVOPS, DESENVOLVIMENTO, DATA_SCIENCE
 }

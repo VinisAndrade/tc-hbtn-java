@@ -1,110 +1,69 @@
 import java.util.*;
 
-public class Blog {
-    private List<Post> posts;
+class Blog {
+    private Set<Post> postagens;
 
     public Blog() {
-        posts = new ArrayList<Post>();
+        this.postagens = new HashSet<>();
     }
 
-    public void adicionarPostagem(Post post) {
-        for(Post p : posts) {
-            if (p.getAutor().equals(post.getAutor()) 
-                && p.getTitulo().equals(post.getTitulo())) {
-                throw new IllegalArgumentException("Postagem jah existente");
-            }
+    public void adicionarPostagem(Post postagem) {
+        if (!postagens.add(postagem)) {
+            throw new IllegalArgumentException("Postagem jah existente");
         }
-        
-        posts.add(post);
     }
 
     public Set<Autor> obterTodosAutores() {
         Set<Autor> autores = new TreeSet<>();
-        
-        for(Post p : this.posts) {
-            autores.add(p.getAutor());
+        for (Post post : postagens) {
+            autores.add(post.getAutor());
         }
-
-        return autores; 
+        return autores;
     }
 
     public Map<Categorias, Integer> obterContagemPorCategoria() {
-        Map<Categorias, Integer> contagemPorCategoria = new TreeMap<>();
-
-        int contagemAtual;
-
-        for(Post p : this.posts) {
-            if (contagemPorCategoria.containsKey(p.getCategoria())) {
-                contagemAtual = contagemPorCategoria.get(p.getCategoria());
-            } else {
-                contagemAtual = 0;
-            }
-
-            contagemPorCategoria.put(p.getCategoria(), contagemAtual + 1);
+        Map<Categorias, Integer> contagem = new HashMap<>();
+        for (Post post : postagens) {
+            contagem.put(post.getCategoria(), contagem.getOrDefault(post.getCategoria(), 0) + 1);
         }
-
-        return contagemPorCategoria;        
+        return contagem;
     }
 
     public Set<Post> obterPostsPorAutor(Autor autor) {
-        Set<Post> postsResult = new TreeSet<>();
-
-        for(Post p : this.posts) {
-            if (p.getAutor().compareTo(autor) == 0) {
-                postsResult.add(p);
+        Set<Post> posts = new TreeSet<>();
+        for (Post post : postagens) {
+            if (post.getAutor().equals(autor)) {
+                posts.add(post);
             }
         }
-
-        return postsResult;
+        return posts;
     }
 
     public Set<Post> obterPostsPorCategoria(Categorias categoria) {
-        Set<Post> postsResult = new TreeSet<>();
-
-        for(Post p : this.posts) {
-            if (p.getCategoria().compareTo(categoria) == 0) {
-                postsResult.add(p);
+        Set<Post> posts = new TreeSet<>();
+        for (Post post : postagens) {
+            if (post.getCategoria() == categoria) {
+                posts.add(post);
             }
         }
-
-        return postsResult;
+        return posts;
     }
 
     public Map<Categorias, Set<Post>> obterTodosPostsPorCategorias() {
-        Map<Categorias, Set<Post>> result = new TreeMap<Categorias, Set<Post>>();
-
-        for(Post p : this.posts) {
-            Set<Post> posts;
-
-            if (result.containsKey(p.getCategoria())) {
-                posts = result.get(p.getCategoria());
-            } else {
-                posts = new TreeSet<>();
-            }
-
-            posts.add(p);
-            result.put(p.getCategoria(), posts);
+        Map<Categorias, Set<Post>> postsPorCategoria = new HashMap<>();
+        for (Post post : postagens) {
+            postsPorCategoria.putIfAbsent(post.getCategoria(), new TreeSet<>());
+            postsPorCategoria.get(post.getCategoria()).add(post);
         }
-
-        return result;
+        return postsPorCategoria;
     }
 
     public Map<Autor, Set<Post>> obterTodosPostsPorAutor() {
-        Map<Autor, Set<Post>> result = new TreeMap<Autor, Set<Post>>();
-
-        for(Post p : this.posts) {
-            Set<Post> posts;
-
-            if (result.containsKey(p.getAutor())) {
-                posts = result.get(p.getAutor());
-            } else {
-                posts = new TreeSet<>();
-            }
-
-            posts.add(p);
-            result.put(p.getAutor(), posts);
+        Map<Autor, Set<Post>> postsPorAutor = new HashMap<>();
+        for (Post post : postagens) {
+            postsPorAutor.putIfAbsent(post.getAutor(), new TreeSet<>());
+            postsPorAutor.get(post.getAutor()).add(post);
         }
-
-        return result;
-    }    
+        return postsPorAutor;
+    }
 }
