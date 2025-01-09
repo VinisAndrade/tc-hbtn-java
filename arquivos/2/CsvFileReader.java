@@ -4,29 +4,27 @@ import java.io.IOException;
 
 public class CsvFileReader {
     public static void main(String[] args) {
-        String filePath = "funcionarios.csv";
+        String fileName = "funcionarios.csv"; // Nome do arquivo CSV
 
-        try (BufferedReader br = new BufferedReader(new FileReader(filePath))) {
+        // Inicializa o BufferedReader
+        try (BufferedReader reader = new BufferedReader(new FileReader(fileName))) {
             String line;
-            boolean isFirstLine = true;
 
+            // Lê cada linha do arquivo
             while ((line = reader.readLine()) != null) {
                 String[] data = line.split(","); // Divide a linha por vírgulas (separador CSV)
 
-                // Dividir a linha em colunas usando ","
-                String[] columns = line.split(",");
-
-                // Imprimir as informações do funcionário
-                System.out.println("Funcionário: " + columns[0]);
-                System.out.println("Idade: " + columns[1]);
-                System.out.println("Departamento: " + columns[2]);
-                System.out.println("Salarial: " + columns[3]);
+                // Exibe os dados do funcionário
+                System.out.println("Funcionário: " + data[0]);
+                System.out.println("Idade: " + data[1]);
+                System.out.println("Departamento: " + data[2]);
+                System.out.println("Salarial: " + data[3]);
                 System.out.println("------------------------");
             }
 
             System.out.println("Leitura do arquivo concluída.");
         } catch (IOException e) {
-            System.err.println("Erro ao ler o arquivo: " + e.getMessage());
+            System.out.println("Ocorreu um erro ao ler o arquivo: " + e.getMessage());
         }
     }
 }
