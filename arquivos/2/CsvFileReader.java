@@ -10,12 +10,8 @@ public class CsvFileReader {
             String line;
             boolean isFirstLine = true;
 
-            while ((line = br.readLine()) != null) {
-                // Ignorar a linha de cabeçalho
-                if (isFirstLine) {
-                    isFirstLine = false;
-                    continue;
-                }
+            while ((line = reader.readLine()) != null) {
+                String[] data = line.split(","); // Divide a linha por vírgulas (separador CSV)
 
                 // Dividir a linha em colunas usando ","
                 String[] columns = line.split(",");
