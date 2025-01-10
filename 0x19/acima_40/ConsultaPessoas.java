@@ -17,11 +17,11 @@ public class ConsultaPessoas {
                 ));
     }
 
-    // Método para agrupar pessoas por cargo e filtrar as que têm idade acima de 40 anos
     public static Map<String, List<Pessoa>> obterPessoasPorCargoAcimaDe40anos(List<Pessoa> pessoas) {
-        return pessoas.stream()
-                .filter(p -> p.getIdade() > 40)  // Filtra pessoas com idade acima de 40 anos
-                .collect(Collectors.groupingBy(Pessoa::getCargo));  // Agrupa por cargo
-    }
+    return pessoas.stream()
+            .collect(Collectors.groupingBy(
+                    Pessoa::getCargo,  // Agrupa por cargo
+                    Collectors.filtering(p -> p.getIdade() > 40, Collectors.toList())  // Filtra as pessoas com idade > 40
+            ));
 
 }
