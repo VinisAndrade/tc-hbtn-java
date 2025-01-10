@@ -1,3 +1,6 @@
+import java.util.*;
+import java.util.stream.Collectors;
+
 public class Program {
     public static void main(String[] args) {
         Pessoa pessoa1 = new Pessoa(1, "John Bannins", "Desenvolvedor", 23, 3200);
