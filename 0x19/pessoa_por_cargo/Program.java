@@ -1,5 +1,4 @@
 import java.util.*;
-import java.util.stream.Collectors;
 
 public class Program {
     public static void main(String[] args) {
@@ -15,14 +14,14 @@ public class Program {
         Pessoa pessoa10 = new Pessoa(10, "Branden Irwin", "Analista QA", 21, 2800);
 
         List<Pessoa> todasPessoas = List.of(pessoa1, pessoa2, pessoa3, pessoa4, pessoa5,
-                pessoa6, pessoa7, pessoa8, pessoa9, pessoa10);
+            pessoa6, pessoa7, pessoa8, pessoa9, pessoa10);
 
         Map<String, List<Pessoa>> pessoasPorCargo1 = ConsultaPessoas.obterPessoasPorCargo(todasPessoas);
         Map<String, List<Pessoa>> pessoasPorCargo2 = ConsultaPessoas.obterPessoasPorCargo(
-                List.of(pessoa1, pessoa4, pessoa10)
+            List.of(pessoa1, pessoa4, pessoa10)
         );
         Map<String, List<Pessoa>> pessoasPorCargo3 = ConsultaPessoas.obterPessoasPorCargo(
-                List.of(pessoa4, pessoa9)
+            List.of(pessoa4, pessoa9)
         );
 
         System.out.println(pessoasPorCargo1);
@@ -32,3 +31,4 @@ public class Program {
         System.out.println(pessoasPorCargo3);
     }
 }
+
