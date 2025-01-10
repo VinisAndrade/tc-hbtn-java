@@ -23,5 +23,6 @@ public class ConsultaPessoas {
                     Pessoa::getCargo,  // Agrupa por cargo
                     Collectors.filtering(p -> p.getIdade() > 40, Collectors.toList())  // Filtra as pessoas com idade > 40
             ));
+    }
 
 }
