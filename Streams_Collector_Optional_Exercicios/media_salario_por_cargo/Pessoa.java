@@ -20,6 +20,10 @@ class Pessoa implements Comparable<Pessoa> {
         return cargo;
     }
 
+    public int getIdade() {
+        return idade;
+    }
+
     public double getSalario() {
         return salario;
     }
