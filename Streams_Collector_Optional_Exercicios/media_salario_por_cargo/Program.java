@@ -1,7 +1,7 @@
     import java.util.*;
 
-public class Program {
-    public static void main(String[] args) {
+  public class Program {
+      public static void main(String[] args) {
         Pessoa pessoa1 = new Pessoa(1, "John Bannins", "Desenvolvedor", 23, 3200);
         Pessoa pessoa2 = new Pessoa(2, "Derry Collier", "Desenvolvedor", 45, 8600);
         Pessoa pessoa3 = new Pessoa(3, "Mikey Berg", "Product Owner", 51, 11350);
@@ -16,17 +16,18 @@ public class Program {
         List<Pessoa> todasPessoas = List.of(pessoa1, pessoa2, pessoa3, pessoa4, pessoa5,
             pessoa6, pessoa7, pessoa8, pessoa9, pessoa10);
 
-        TreeMap<String, TreeSet<Pessoa>> pessoasAgrupadas = ConsultaPessoas.obterPessoasAgrupadasPorCargoEmOrdemReversa(todasPessoas);
-        Map<String, Long> contagemPessoasPorCargo = ConsultaPessoas.obterContagemPessoasPorCargo(todasPessoas);
-        Map<String, Map<Integer, Long>> contagemPessoasPorCargoEIdade = ConsultaPessoas.obterContagemPessoasPorCargoEIdade(todasPessoas);
-        Map<String, Double> mediaSalarioPorCargo = ConsultaPessoas.obterMediaSalarioPorCargo(todasPessoas);
+        Map<String, Double> pessoas1 = ConsultaPessoas.obterMediaSalarioPorCargo(todasPessoas);
+        Map<String, Double> pessoas2 = ConsultaPessoas.obterMediaSalarioPorCargo(
+            List.of(pessoa1, pessoa2, pessoa3, pessoa4, pessoa9, pessoa10)
+        );
+        Map<String, Double> pessoas3 = ConsultaPessoas.obterMediaSalarioPorCargo(
+            List.of(pessoa1, pessoa3, pessoa4, pessoa5, pessoa9)
+        );
 
-        System.out.println(pessoasAgrupadas);
+        System.out.println(pessoas1);
         System.out.println();
-        System.out.println(contagemPessoasPorCargo);
+        System.out.println(pessoas2);
         System.out.println();
-        System.out.println(contagemPessoasPorCargoEIdade);
-        System.out.println();
-        System.out.println(mediaSalarioPorCargo);
-    }
-}
+        System.out.println(pessoas3);
+     }
+   }
