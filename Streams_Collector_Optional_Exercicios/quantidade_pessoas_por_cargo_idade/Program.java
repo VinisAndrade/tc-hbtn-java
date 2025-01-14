@@ -1,6 +1,6 @@
     import java.util.*;
 
-    public class Program {
+ public class Program {
         public static void main(String[] args) {
             Pessoa pessoa1 = new Pessoa(1, "John Bannins", "Desenvolvedor", 23, 3200);
             Pessoa pessoa2 = new Pessoa(2, "Derry Collier", "Desenvolvedor", 45, 8600);
@@ -16,11 +16,11 @@
             List<Pessoa> todasPessoas = List.of(pessoa1, pessoa2, pessoa3, pessoa4, pessoa5,
                 pessoa6, pessoa7, pessoa8, pessoa9, pessoa10);
 
-            Map<String, Long> pessoas1 = ConsultaPessoas.obterContagemPessoasPorCargo(todasPessoas);
-            Map<String, Long> pessoas2 = ConsultaPessoas.obterContagemPessoasPorCargo(
+            Map<String, Map<Integer, Long>> pessoas1 = ConsultaPessoas.obterContagemPessoasPorCargoEIdade(todasPessoas);
+            Map<String, Map<Integer, Long>> pessoas2 = ConsultaPessoas.obterContagemPessoasPorCargoEIdade(
                 List.of(pessoa1, pessoa2, pessoa3, pessoa4, pessoa9, pessoa10)
             );
-            Map<String, Long> pessoas3 = ConsultaPessoas.obterContagemPessoasPorCargo(
+            Map<String, Map<Integer, Long>> pessoas3 = ConsultaPessoas.obterContagemPessoasPorCargoEIdade(
                 List.of(pessoa1, pessoa3, pessoa4, pessoa5, pessoa9)
             );
 
@@ -30,4 +30,4 @@
             System.out.println();
             System.out.println(pessoas3);
         }
-    }
+}
